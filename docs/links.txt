@@ -18,6 +18,12 @@ Links
 - Angular Modules (NgModules)
   - https://angular.io/guide/architecture-modules
   
+- JavaScript Modules
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+  
+- JavaScript Modules vs NgModules
+  - https://angular.io/guide/ngmodule-vs-jsmodule
+  
 - Introduction to components and templates
   - https://angular.io/guide/architecture-components
   

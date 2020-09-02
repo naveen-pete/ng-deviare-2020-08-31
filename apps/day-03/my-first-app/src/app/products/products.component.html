@@ -1,0 +1,37 @@
+<h3>Products</h3>
+<p>Data binding demo</p>
+
+<!-- 1. Interpolation -->
+<div>
+  Product Name: {{ productName }}
+</div>
+<hr>
+
+<!-- 2. Property Binding -->
+<!-- <div>
+  Product Name: <input type="text" [value]="productName">
+</div>
+<hr> -->
+
+<!-- 5. Two-way Binding -->
+<div>
+  Product Name: <input type="text" [(ngModel)]="productName">
+</div>
+<hr>
+
+
+<!-- 3. Event Binding -->
+<div>
+  <button (click)="onSave()">Save</button>
+</div>
+<hr>
+
+<!-- 4. Event Binding -->
+<div>
+  Search: <input type="text" (keyup)="onSearch($event)">
+</div>
+<hr>
+
+<div>
+  Huge discount sale for {{ productName }}
+</div>

@@ -1,0 +1,3 @@
+class Customer { }
+
+function displayCustomerDetails() { }
