@@ -33,9 +33,16 @@ Links
 - Directives
   - Attribute Directives
     - https://angular.io/guide/attribute-directives
+    
+  - Built-in directives
+    - https://angular.io/guide/built-in-directives
   
   - Structural Directives
     - https://angular.io/guide/structural-directives
+    
+- Pipes
+  - Transforming Data Using Pipes
+    - https://angular.io/guide/pipes
     
 - Angular Forms
   - Introduction to forms in Angular
