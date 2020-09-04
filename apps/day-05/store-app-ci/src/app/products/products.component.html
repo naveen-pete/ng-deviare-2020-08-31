@@ -6,7 +6,8 @@
 
   <div class="col-8">
     <h4>Products</h4>
-    <app-product-detail [product]="p" *ngFor="let p of productList"></app-product-detail>
+    <app-product-detail [product]="p" (deleteProduct)="onDeleteProduct($event)" *ngFor="let p of productList">
+    </app-product-detail>
   </div>
 
 </div>

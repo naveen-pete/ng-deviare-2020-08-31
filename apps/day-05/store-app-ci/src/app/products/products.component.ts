@@ -39,6 +39,15 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void { }
 
   onProductSaved(newProduct: ProductModel) {
+    newProduct.id = Date.now();
     this.productList.unshift(newProduct);
+  }
+
+  onDeleteProduct(productId: number) {
+    var index = this.productList.findIndex(p => {
+      return p.id === productId;
+    });
+
+    this.productList.splice(index, 1);
   }
 }
