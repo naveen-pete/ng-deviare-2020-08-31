@@ -1,0 +1,212 @@
+NPM - Node Package Manager
+- install Node.js packages
+- remove 
+- update
+
+What is Angular? Why Angular?
+- is a front-end framework
+- faster loading
+- angular app is more modular to manage application feature
+
+amazon.in
+460+ request
+
+<html>
+<head>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+
+
+Server side rendering - HTML generation happens on the server
+----------------------
+Asp.net
+PHP
+Java servlets/JSP/Spring
+
+SPA - Client-side rendering - HTML generation happens on the client
+Angular
+React
+VueJS
+
+M - MongoDB
+E - Express
+A - Angular
+N - Node
+
+A - CS
+PHP - Server
+MySQL - 
+
+Angular - Client
+Asp.NET Core - Server
+MS SQL Server - DB
+
+Angular - Client
+Spring/JSP/Servlets - Server
+Oracle - DB
+
+Angular
+Python/Django - Server
+
+html, css, js
+
+ng serve
+  1. Compile TS code to JS code - webpack
+  
+  2. Bundle JS code - webpack (build tool)
+     a. main.js
+     b. vendor.js
+     c. runtime.js
+     d. styles.js
+     e. polyfills.js
+     
+  3. Inject <script> tags into index.html for above js files - webpack
+    <script src="runtime.js" defer></script>
+    <script src="polyfills.js" defer></script>
+    <script src="styles.js" defer></script>
+    <script src="vendor.js" defer></script>
+    <script src="main.js" defer></script></body>
+    
+  4. Launch web server - Angular Live Development Server
+  
+  5. Deploys my angular app on the web server and my app is avialable for use (port - 4200)
+
+Angular Building Blocks
+1. Angular Module (NgModule)
+2. Decorator 
+3. Component
+4. Directive
+    a. attribute directive - ngModel, ngStyle, ngClass
+    b. structual directive - *ngFor, *ngIf, *ngSwitch
+5. Pipe
+
+
+code
+- class
+- function
+- variable
+- constants
+
+-------------------------------
+CustomerModule
+
+class Customer {
+}
+
+showCustomer() {
+}
+
+customerList = []
+
+-------------------------------
+ProductModule
+
+class Product {
+}
+
+showProduct() {
+}
+
+productList = []
+
+Decorator 
+  1. is a function
+  2. name starts with @
+  
+An Angular app 
+  1. MUST contain at least 1 module
+  2. MUST contain at least 1 component
+  
+MVC (MVVM)
+- Model
+- View - Component
+- Controller
+
+Search Component consists of
+- UI - HTML - search.component.html     -     TEMPLATE -> VIEW
+<input>, <button>, <select>
+- Style - CSS - search.component.css
+- Data - TypeScript Class - property string[] - search.component.ts     - MODEL (VIEW-MODEL)
+- Behavior / Operation - TypeScript Class - method search(text) - search.component.ts  - CONTROLLER
+
+---------------------
+Java
+int i = 10;
+
+i = 'a';
+
+- Error at compile time
+
+---------------------
+JavaScript
+var i: number = 10;
+...
+...
+...
+i = 'a';
+
+var r = 1000 / i;   // runtime error - divide by 0 error
+
+
+- no compile error
+- may result in a runtime error
+
+------------------------
+Bootstrap
+- https://getbootstrap.com/
+- CSS Framework
+- Third-party framework
+- Build fast, responsive sites/apps
+
+How to use Bootstrap
+- Option #1 (install locally)
+  - npm install bootstrap
+  - update angular.json configuration
+
+- Option #2 (use CDN link)
+
+-------------------------
+OOP Language
+- Class members can be: public, private, protected
+- access modifiers
+- property or a method
+  - public - visible (default - TypeScript)
+  - private - not visible
+  - protected - visibility - self or derived classes
+
+--------------------------
+Services
+
+1. QuickLookComponent
+  - product name, price, author, seller, rating, image
+  - code to issue http request to http://amazon.in/api/products/1
+  
+2. ProductDetailComponent
+  - product name, price, author, seller, rating, image + more information
+  - code to issue http request to http://amazon.in/api/products/1
+  
+3. ShoppingCartComponent
+  - product name, price, author, seller, rating, image
+  - code to issue http request to http://amazon.in/api/products/1
+
+4. OrdersComponent
+  - product name, price, author, seller, rating, image
+  - code to issue http request to http://amazon.in/api/products/1
+  
+  
+http://amazon.in/api/products/1
+
+http://amazon.com/api/products/1
+
+1. Code is duplicated
+2. Design flaw
+
+Service
+code to issue http request to http://amazon.in/api/products/1
