@@ -186,19 +186,19 @@ Services
 
 1. QuickLookComponent
   - product name, price, author, seller, rating, image
-  - code to issue http request to http://amazon.in/api/products/1
+  - // code to issue http request to http://amazon.in/api/products/1
   
 2. ProductDetailComponent
   - product name, price, author, seller, rating, image + more information
-  - code to issue http request to http://amazon.in/api/products/1
+  - // code to issue http request to http://amazon.in/api/products/1
   
 3. ShoppingCartComponent
   - product name, price, author, seller, rating, image
-  - code to issue http request to http://amazon.in/api/products/1
+  - // code to issue http request to http://amazon.in/api/products/1
 
 4. OrdersComponent
   - product name, price, author, seller, rating, image
-  - code to issue http request to http://amazon.in/api/products/1
+  - // code to issue http request to http://amazon.in/api/products/1
   
   
 http://amazon.in/api/products/1
@@ -209,4 +209,14 @@ http://amazon.com/api/products/1
 2. Design flaw
 
 Service
-code to issue http request to http://amazon.in/api/products/1
+- code to issue http request to http://amazon.in/api/products/1
+
+- ProductsService
+  - get all products
+  - get one product for which I provide a product id
+  - add a new product
+  - delete a product for which I pass product id
+  - update a product for which I pass product id
+  
+Pub-Sub pattern - Publisher - Subscriber pattern
+Observer pattern

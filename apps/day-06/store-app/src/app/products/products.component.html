@@ -1,7 +1,7 @@
 <div class="row">
 
   <div class="col-4">
-    <app-product-form (productSaved)="onProductSaved($event)"></app-product-form>
+    <app-product-form></app-product-form>
   </div>
 
   <div class="col-8">
@@ -11,14 +11,3 @@
   </div>
 
 </div>
-
-<!--
-
-  Input Property
-  <input type="text" [value]="productName" />             -- built-in element and built-in property
-  <app-product-detail [product]="p"></app-product-detail> -- custom element and custom property
-
-  <button (click)="onSubmit()">Submit</button>            -- built-in element and built-in event
-  <app-product-form (productSaved)="onProductSaved($event)"></app-product-form> -- custom element and custom event
-
--->
