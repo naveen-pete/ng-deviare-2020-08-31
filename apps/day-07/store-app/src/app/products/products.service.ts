@@ -32,6 +32,13 @@ export class ProductsService {
       price: 30700,
       description: 'The best of work and play in one place',
       isAvailable: true
+    },
+    {
+      id: 4,
+      name: 'Acer',
+      price: 25900,
+      description: 'Acer Laptop',
+      isAvailable: true
     }
   ];
 
