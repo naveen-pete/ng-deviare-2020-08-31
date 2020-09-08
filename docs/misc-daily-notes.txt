@@ -220,3 +220,12 @@ Service
   
 Pub-Sub pattern - Publisher - Subscriber pattern
 Observer pattern
+
+---------------------------------------------
+Async JavaScript
+1. Callback (JS spec)
+2. Promise  (JS spec)
+   a. Async / Await (JS spec)
+3. Observables (ReactiveX - third-party library (rxjs))
+
+- http request to the server
