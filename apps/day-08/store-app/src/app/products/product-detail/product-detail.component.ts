@@ -29,7 +29,16 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       this.id = +map.get('id');
 
       // get the product for the corresponding product id
-      this.product = this.service.getProduct(this.id);
+      this.service.getProduct(this.id).subscribe(
+        (product) => {
+          console.log('Get product successful.');
+          this.product = product;
+        },  // success callback
+        (error) => {
+          console.log('Get product failed.');
+          console.log('Error:', error);
+        }   // failure callback
+      );
     });
   }
 

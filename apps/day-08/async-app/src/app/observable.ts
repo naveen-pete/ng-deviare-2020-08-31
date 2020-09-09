@@ -40,7 +40,7 @@ const getPosts = (userId: number) => {
 };
 
 export const doWork = () => {
-  getUser('hari')
+  getUser('hari1')
     .pipe(
       switchMap((user: any) => {
         console.log('user:', user);

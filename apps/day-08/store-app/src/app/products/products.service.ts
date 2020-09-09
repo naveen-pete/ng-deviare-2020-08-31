@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Subject, Observable } from 'rxjs';
 
 import { ProductModel } from './product.model';
 
@@ -7,75 +8,38 @@ import { ProductModel } from './product.model';
   providedIn: 'root'
 })
 export class ProductsService {
-  // EventEmitter - use this only when a child component wants to interact with its parent
-  // Service to Component notification
+  private apiUrl = 'http://localhost:3000/products';
   productsChanged: Subject<ProductModel[]> = new Subject<ProductModel[]>();
 
-  private products: ProductModel[] = [
-    {
-      id: 1,
-      name: 'ASUS VivoBook',
-      price: 56500,
-      description: 'ASUS X409 is the entry-level laptop that delivers powerful performance and immersive visuals',
-      isAvailable: true
-    },
-    {
-      id: 2,
-      name: 'Lenovo Ideapad Slim',
-      price: 34990,
-      description: 'Engineered for long-lasting performance, the Lenovo IdeaPad Slim 3 delivers powerful performance in an entry-level laptop',
-      isAvailable: false
-    },
-    {
-      id: 3,
-      name: 'HP Chromebook',
-      price: 30700,
-      description: 'The best of work and play in one place',
-      isAvailable: true
-    },
-    {
-      id: 4,
-      name: 'Acer',
-      price: 25900,
-      description: 'Acer Laptop',
-      isAvailable: true
-    }
-  ];
+  private products: ProductModel[] = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getAllProducts() {
+  getAllProducts(): Observable<ProductModel[]> {
     // create a copy of products array
     // const productsCopy = this.products.slice();
-    const productsCopy = [...this.products];
+    // const productsCopy = [...this.products];
 
     // return copy of array of products
-    return productsCopy;
+    return this.http.get<ProductModel[]>(this.apiUrl);
   }
 
-  addProduct(newProduct: ProductModel) {
-    const product = {
-      ...newProduct,
-      id: Date.now()
-    };
-
+  addProduct(newProduct: ProductModel): Observable<ProductModel> {
     // add a new product
-    this.products = [...this.products, product];
+    // this.products = [...this.products, product];
 
-    this.productsChanged.next([...this.products]);
+    // this.productsChanged.next([...this.products]);
+    return this.http.post<ProductModel>(this.apiUrl, newProduct);
   }
 
-  getProduct(productId: number) {
-    const product = this.products.find(p => {
-      return p.id === productId;
-    });
-
-    // return a product based on id
-    return { ...product };
+  getProduct(id: number): Observable<ProductModel> {
+    // return this.http.get<ProductModel>(this.apiUrl + '/' + id);  
+    return this.http.get<ProductModel>(`${this.apiUrl}/${id}`);
   }
 
   updateProduct(id: number, product: ProductModel) {
     // update a product based on id
+    // this.http.patch()
   }
 
   deleteProduct(productId: number) {
@@ -88,5 +52,6 @@ export class ProductsService {
 
     this.productsChanged.next([...this.products]);
     console.log(`Product with id ${productId} has been deleted.`);
+    // this.http.delete();
   }
 }

@@ -34,8 +34,17 @@ export class ProductFormComponent implements OnInit {
         this.id = +map.get('id');
 
         // get the product for the corresponding product id
-        this.product = this.service.getProduct(this.id);
-        this.addNew = false;
+        this.service.getProduct(this.id).subscribe(
+          (product) => {
+            console.log('Get product successful.');
+            this.product = product;
+            this.addNew = false;
+          },  // success callback
+          (error) => {
+            console.log('Get product failed.');
+            console.log('Error:', error);
+          }   // failure callback
+        );
       }
     });
   }
@@ -43,19 +52,30 @@ export class ProductFormComponent implements OnInit {
 
   onSubmit() {
     if (this.addNew) {
-      this.service.addProduct(this.product);
+      this.service.addProduct(this.product).subscribe(
+        (product) => {
+          console.log('Add product successful.');
+          console.log('product:', product);
+
+          this.product = new ProductModel();
+          this.router.navigate(['/products']);
+        },  // success callback
+        (error) => {
+          console.log('Add product failed.');
+          console.log('Error:', error);
+        }   // failure callback
+      );
     } else {
       this.service.updateProduct(this.id, this.product);
     }
 
-    this.product = new ProductModel();
 
     this.showMessage = true;
     setTimeout(() => {
       this.showMessage = false;
     }, 4000);
 
-    this.router.navigate(['/products']);
+
   }
 
 }

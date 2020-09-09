@@ -20,11 +20,22 @@ export class ProductListComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.subProductsChanged = this.service.productsChanged.subscribe((products) => {
-      this.products = products;
-    });
+    this.subProductsChanged = this.service.productsChanged.subscribe(
+      (products) => {
+        this.products = products;
+      }
+    );
 
-    this.products = this.service.getAllProducts();
+    this.service.getAllProducts().subscribe(
+      (products: ProductModel[]) => {
+        console.log('Get products successful.');
+        this.products = products;
+      },  // success callback
+      (error) => {
+        console.log('Get products failed.');
+        console.log('Error:', error);
+      }   // failure callback
+    );
   }
 
   ngOnDestroy() {
