@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -36,7 +37,6 @@ export class ProductFormComponent implements OnInit {
         // get the product for the corresponding product id
         this.service.getProduct(this.id).subscribe(
           (product) => {
-            console.log('Get product successful.');
             this.product = product;
             this.addNew = false;
           },  // success callback
@@ -50,11 +50,16 @@ export class ProductFormComponent implements OnInit {
   }
 
 
-  onSubmit() {
+  onSubmit(form: NgForm) {
+    if (!form.valid) {
+      console.log('Product form is invalid.');
+      return;
+    }
+
     const product = {
-      ...this.product,
-      price: +this.product.price,
-      isAvailable: this.product.isAvailable || false
+      ...form.value,
+      price: form.value.price ? +form.value.price : 0,
+      isAvailable: form.value.isAvailable || false
     }
 
     if (this.addNew) {

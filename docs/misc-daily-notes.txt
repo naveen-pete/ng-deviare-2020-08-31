@@ -237,3 +237,25 @@ Get All Products      - HttpClient.get()    - READ
 Get Product - id      - HttpClient.get()    - READ
 Delete Product - id   - HttpClient.delete() - DELETE
 Update Product - id, product - HttpClient.put() / HttpClient.patch() - UPDATE
+
+---------------------------------------------
+Angular Forms
+1. Template Driven Forms
+  - more code in html template
+  - built-in validators
+2. Reactive Forms
+  - more code in TS
+  - more control
+  - unit-testable
+  - built-in validators
+  - custom validators
+  - asynchronous validators
+
+Validation properties on Form / Control
+- valid / invalid - boolean
+- touched / untouched - boolean
+- pristine / dirty - boolean
+- errors 
+- value
+
+

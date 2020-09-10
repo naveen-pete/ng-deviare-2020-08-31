@@ -27,6 +27,13 @@
       "description": "A lightweight laptop from Apple Inc.",
       "price": 150990,
       "isAvailable": true
+    },
+    {
+      "name": "p100",
+      "description": "p100 desc",
+      "price": 100,
+      "isAvailable": false,
+      "id": 5
     }
   ],
   "users": [
