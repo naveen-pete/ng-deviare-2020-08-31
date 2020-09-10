@@ -229,3 +229,11 @@ Async JavaScript
 3. Observables (ReactiveX - third-party library (rxjs))
 
 - http request to the server
+
+---------------------------------------------
+
+Add Product           - HttpClient.post()   - CREATE
+Get All Products      - HttpClient.get()    - READ
+Get Product - id      - HttpClient.get()    - READ
+Delete Product - id   - HttpClient.delete() - DELETE
+Update Product - id, product - HttpClient.put() / HttpClient.patch() - UPDATE
